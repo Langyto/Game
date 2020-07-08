@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="user-scalable=no, width=device=width"/>
+        <link rel="stylesheet" href="quiz_ninja/css/quizbiblico.css"  media="only screen and (max-width: 480px)">
+        <link rel="stylesheet" href="quiz_ninja/css/quizbiblico.css"  media="screen and (min-width: 481px)">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+        <link rel="stylesheet" href="quiz_ninja/css/materialize.min.css">
+    <link rel="stylesheet" href="quiz_ninja/css/materialize.css">
+    <link rel="stylesheet" href="quiz_ninja/css/material-icons.css">
+
+        <title>Aula Javascript</title>
+    </head>
+
+    <body>
+      <nav class="blue-grey lighten-2">
+        <ul>
+                  
+           <li><a target="_self" href="index.html"><i class="material-icons ">home</i></a></li>
+           <li><a href="#"><i class="material-icons " onclick="alert('obrigado por ajudar a crescer')">payment</i></a></li>
+           <li><a href="#"><i class="material-icons ">help</i></a></li>
+           <li><a href="#"><i class="material-icons ">settings</i></a></li>
+           <li>
+            <div class="codigo">
+              <span id="hora">00h</span><span id="minuto">00m</span><span id="segundo">00s</span>
+            </div></li>
+            <li>&nbsp;<input class="btn blue-grey lighten-2" type="button" value="Comecar" onclick="tempo(1);"></li>
+            <li><div id="comeca" style="display:none;"><input class="btn  blue-grey lighten-2" type="button" value="parar" onclick="tempo(1);"></div>
+              <div id="parar"><input class="btn blue-grey lighten-2" type="button" value="Parar" onclick="parar();"></div></li>
+       </ul>
+    </nav>
+    <div class="conteiner">
+                <div>
+                    <p class="question">1. Qual é o maior livro da Bíblia</p>
+      
+                  <ul>
+                    <label id="correctString1">
+                      <input type="radio" class="answer with-gap" name="q1 group1" value="1"/>
+                      <span>Salmos</span>
+                    </label>
+                  <br>
+                  <label>
+                  <input class="answer with-gap" type="radio" name="q1 group1" value="0">
+                  <span>Mateus</span>
+                </label>
+                  <br>
+                  <label>
+                    <input class="answer with-gap" type="radio" name="q1 group1" value="0">
+                    <span>Lucas</span>
+                  </label>
+                  <br>
+                  <label>
+                    <input class="answer with-gap" type="radio" name="q1 group1" value="0">
+                    <span>joão</span>
+                  </label>
+                  </ul>
+                </div>
+                
+                <div>
+                    <p class="question">2. Quantas cartas escreveu João?</p>
+      
+                    <ul>
+                      <label>
+                        <input type="radio" class="answer with-gap" name="q2 group1" value="0"/>
+                        <span>Salmos</span>
+                      </label>
+                    <br>
+                    <label>
+                    <input class="answer with-gap" type="radio" name="q2 group1" value="0">
+                    <span>Mateus</span>
+                  </label>
+                    <br>
+                    <label id="correctString2">
+                      <input class="answer with-gap" type="radio" name="q2 group1" value="1">
+                      <span>certo</span>
+                    </label>
+                    <br>
+                    <label>
+                      <input class="answer with-gap" type="radio" name="q2 group1" value="0">
+                      <span>joão</span>
+                    </label>
+                    </ul>
+                </div>
+            
+                <div>
+                  <p class="question">3. Quantas cartas escreveu João?</p>
+    
+                  <ul>
+                    <label>
+                      <input type="radio" class="answer with-gap" name="q2 group1" value="0"/>
+                      <span>Salmos</span>
+                    </label>
+                  <br>
+                  <label>
+                  <input class="answer with-gap" type="radio" name="q2 group1" value="0">
+                  <span>Mateus</span>
+                </label>
+                  <br>
+                  <label id="correctString3">
+                    <input class="answer with-gap" type="radio" name="q2 group1" value="1">
+                    <span>certo</span>
+                  </label>
+                  <br>
+                  <label>
+                    <input class="answer with-gap" type="radio" name="q2 group1" value="0">
+                    <span>joão</span>
+                  </label>
+                  </ul>
+              </div>
+            
+              <div>
+                <p class="question">4. Quantas cartas escreveu João?</p>
+  
+                <ul>
+                  <label>
+                    <input type="radio" class="answer with-gap" name="q2 group1" value="0"/>
+                    <span>Salmos</span>
+                  </label>
+                <br>
+                <label>
+                <input class="answer with-gap" type="radio" name="q2 group1" value="0">
+                <span>Mateus</span>
+              </label>
+                <br>
+                <label id="correctString4">
+                  <input class="answer with-gap" type="radio" name="q2 group1" value="1">
+                  <span>certo</span>
+                </label>
+                <br>
+                <label>
+                  <input class="answer with-gap" type="radio" name="q2 group1" value="0">
+                  <span>joão</span>
+                </label>
+                </ul>
+            </div>
+           
+      <br/>
+        <div class="submitter">
+          <button class="quizSubmit btn waves-effect waves-light red darken-4" id="submitButton" type="submit" name="action" onClick="submitQuiz()" >Submit
+            <i class="material-icons right">send</i>
+          </button>
+                <!--<input class="quizSubmit" id="submitButton" onClick="submitQuiz()"
+                type="submit" value="Submit" />-->
+          </div>
+          
+        
+      <!--show only wrong answers on submit-->
+      <div class="quizAnswers" id="correctAnswer1"></div>
+              <div class="quizAnswers" id="correctAnswer2"></div>
+          <div class="quizAnswers" id="correctAnswer3"></div>
+          <div class="quizAnswers" id="correctAnswer4"></div>
+      
+      <!--show score upon submit-->
+          <div>
+              <h2 class="quizScore" id="userScore"></h2>
+          </div>
+          </div>
+        </div>
+          <script src="quiz_ninja/js/quizbiblico.js"></script>
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+          <script src="quiz_ninja/js/jquery.min.js"></script>      
+          <script src="quiz_ninja/js/scripts.js"></script>
+          <script src="quiz_ninja/js/bootstrap.bundle.js"></script>
+          <script src="quiz_ninja/jsbootstrap.bundle.min.js"></script>
+          <script src="quiz_ninja/js/bootstrap.js"></script>
+          <script src="quiz_ninja/js/bootstrap.min.js"></script>
+          <script src="quiz_ninja/js/scripts.js"></script>
+          <script src="quiz_ninja/js/materialize.min.js"></script>
+          <script src="quiz_ninja/js/materialize.js"></script>
+      </body>
+</html>
