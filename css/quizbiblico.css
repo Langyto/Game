@@ -153,7 +153,6 @@ ul li a:hover {
 .font {
   font-size: 30px;
 }
-@media screen {
 body {
   zoom: 250%;
-}}
+}
